@@ -1,6 +1,6 @@
 import Link from "next/link"
-import Image from "next/image"
 
+import { Logo } from "@/components/logo"
 import { Button } from "@/components/ui/button"
 
 export function SiteHeader() {
@@ -8,14 +8,7 @@ export function SiteHeader() {
     <header className="border-b bg-background">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2 text-sm font-semibold">
-          <Image
-            src="/logo.svg"
-            alt=""
-            width={17}
-            height={17}
-            style={{ width: 17, height: 17 }}
-            priority
-          />
+          <Logo className="size-[17px] shrink-0" />
           <span>emstein ui</span>
         </Link>
         <nav className="flex items-center gap-1">

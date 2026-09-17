@@ -1,6 +1,6 @@
 import Link from "next/link"
-import Image from "next/image"
 
+import { Logo } from "@/components/logo"
 import { SiteHeader } from "@/components/site-header"
 import { TablePreview } from "@/components/table-preview"
 import { Badge } from "@/components/ui/badge"
@@ -24,14 +24,7 @@ export default function Home() {
           </Badge>
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <Image
-                src="/logo.svg"
-                alt=""
-                width={38}
-                height={38}
-                style={{ width: 38, height: 38 }}
-                priority
-              />
+              <Logo className="size-[38px] shrink-0" />
               <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
                 emstein ui
               </h1>
