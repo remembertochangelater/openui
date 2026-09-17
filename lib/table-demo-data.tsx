@@ -1,4 +1,4 @@
-import type { OpenUITableColumn } from "@/components/openui/table"
+import type { EmsteinUITableColumn } from "@/components/emstein-ui/table"
 
 export type DemoUser = {
   id: string
@@ -59,7 +59,7 @@ export const demoUsers: DemoUser[] = Array.from({ length: 600 }, (_, index) => {
   }
 })
 
-export const demoColumns: OpenUITableColumn<DemoUser>[] = [
+export const demoColumns: EmsteinUITableColumn<DemoUser>[] = [
   {
     key: "id",
     label: "ID",

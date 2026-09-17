@@ -11,12 +11,12 @@ export function SiteHeader() {
           <Image
             src="/logo.svg"
             alt=""
-            width={20}
-            height={28}
-            style={{ width: 20, height: 28 }}
+            width={17}
+            height={17}
+            style={{ width: 17, height: 17 }}
             priority
           />
-          <span>OpenUI</span>
+          <span>emstein ui</span>
         </Link>
         <nav className="flex items-center gap-1">
           <Button asChild variant="ghost" size="sm">

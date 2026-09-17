@@ -29,7 +29,7 @@ type ColumnType =
   | "status"
   | "actions"
 
-export type OpenUITableColumn<TData> = {
+export type EmsteinUITableColumn<TData> = {
   key: Extract<keyof TData, string> | string
   label: string
   type?: ColumnType
@@ -47,17 +47,17 @@ export type OpenUITableColumn<TData> = {
   footerClassName?: string
 }
 
-export type OpenUITableSelection = {
+export type EmsteinUITableSelection = {
   selectedRows?: string[]
   onSelectedRowsChange?: (rows: string[]) => void
   defaultSelectedRows?: string[]
 }
 
-export type OpenUITableProps<TData> = {
+export type EmsteinUITableProps<TData> = {
   data: TData[]
-  columns: OpenUITableColumn<TData>[]
+  columns: EmsteinUITableColumn<TData>[]
   getRowId?: (row: TData, index: number) => string
-  selection?: OpenUITableSelection
+  selection?: EmsteinUITableSelection
   resizable?: boolean
   sortable?: boolean
   showUnsortedSortIcon?: boolean
@@ -100,7 +100,7 @@ const columnTypeSizes: Record<
   actions: { width: 72, minWidth: 56, grow: 0 },
 }
 
-function getColumnSizes<TData>(column: OpenUITableColumn<TData>) {
+function getColumnSizes<TData>(column: EmsteinUITableColumn<TData>) {
   const preset = columnTypeSizes[column.type ?? "text"]
 
   return {
@@ -109,7 +109,7 @@ function getColumnSizes<TData>(column: OpenUITableColumn<TData>) {
   }
 }
 
-function getColumnGrow<TData>(column: OpenUITableColumn<TData>) {
+function getColumnGrow<TData>(column: EmsteinUITableColumn<TData>) {
   if (typeof column.grow === "number") {
     return Math.max(0, column.grow)
   }
@@ -279,7 +279,7 @@ function DataTable<TData>({
   bodyClassName,
   footerClassName,
   captionClassName,
-}: OpenUITableProps<TData>) {
+}: EmsteinUITableProps<TData>) {
   const isSelectionControlled = selection?.selectedRows !== undefined
   const [internalSelectedRows, setInternalSelectedRows] = React.useState(
     selection?.defaultSelectedRows ?? []
@@ -786,7 +786,7 @@ function DataTable<TData>({
 }
 
 export function Table<TData>(
-  props: OpenUITableProps<TData> | TablePrimitiveProps
+  props: EmsteinUITableProps<TData> | TablePrimitiveProps
 ) {
   if ("data" in props && "columns" in props) {
     return <DataTable {...props} />

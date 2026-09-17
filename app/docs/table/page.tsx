@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-const usageCode = `import { Table } from "@/components/openui/table"
+const usageCode = `import { Table } from "@/components/emstein-ui/table"
 
 const columns = [
   { key: "id", label: "ID", type: "shortText", width: 96 },
@@ -36,7 +36,7 @@ const primitiveCode = `import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/openui/table"
+} from "@/components/emstein-ui/table"
 
 export function InvoicesTable() {
   return (
@@ -133,7 +133,7 @@ export default function TableDocsPage() {
             </p>
           </div>
           <pre className="overflow-x-auto rounded-md border bg-muted p-4 text-sm">
-            <code>npx shadcn@latest add https://openuis.vercel.app/r/table.json</code>
+            <code>npx shadcn@latest add https://ui.emstein.com/r/table.json</code>
           </pre>
         </section>
 

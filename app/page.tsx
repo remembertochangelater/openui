@@ -27,13 +27,13 @@ export default function Home() {
               <Image
                 src="/logo.svg"
                 alt=""
-                width={46}
-                height={64}
-                style={{ width: 46, height: 64 }}
+                width={38}
+                height={38}
+                style={{ width: 38, height: 38 }}
                 priority
               />
               <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-                OpenUI
+                emstein ui
               </h1>
             </div>
             <p className="max-w-2xl text-base text-muted-foreground">
@@ -50,7 +50,7 @@ export default function Home() {
             </Button>
           </div>
           <pre className="overflow-x-auto rounded-md border bg-muted p-4 text-sm">
-            <code>npx shadcn@latest add https://openuis.vercel.app/r/table.json</code>
+            <code>npx shadcn@latest add https://ui.emstein.com/r/table.json</code>
           </pre>
         </section>
 

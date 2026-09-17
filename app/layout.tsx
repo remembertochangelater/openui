@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OpenUI",
+  title: "emstein ui",
   description: "Shadcn-compatible components for production apps.",
   icons: {
     icon: [

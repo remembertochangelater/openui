@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "openui",
-  "homepage": "https://openuis.vercel.app",
+  "name": "emstein-ui",
+  "homepage": "https://ui.emstein.com",
   "items": [
     {
       "name": "table",
@@ -16,7 +16,7 @@
       "registryDependencies": ["checkbox"],
       "files": [
         {
-          "path": "components/openui/table.tsx",
+          "path": "components/emstein-ui/table.tsx",
           "type": "registry:component"
         }
       ]
