@@ -1,41 +1,44 @@
 import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
 
+import { CommandMenu } from "@/components/command-menu"
+import { GitHubIcon } from "@/components/icons"
 import { Logo } from "@/components/logo"
+import { MainNav } from "@/components/main-nav"
+import { MobileNav } from "@/components/mobile-nav"
+import { ThemeToggle } from "@/components/theme-toggle"
+import { Button } from "@/components/ui/button"
+import { siteConfig } from "@/lib/site"
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <div className="mx-auto flex h-16 max-w-[1600px] items-center px-4 sm:px-6">
-        <Link href="/" className="flex items-center gap-2.5 font-semibold tracking-tight">
-          <Logo className="size-5 shrink-0" />
-          <span>emstein ui</span>
-        </Link>
-
-        <span className="mx-4 hidden h-5 w-px bg-border sm:block" />
-
-        <nav className="hidden items-center gap-1 sm:flex" aria-label="Primary navigation">
-          <Link
-            href="/docs/table"
-            className="px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Components
-          </Link>
-          <Link
-            href="/r/registry.json"
-            className="px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Registry
-          </Link>
-        </nav>
-
+    <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/70">
+      <div className="page-container flex h-14 items-center gap-2">
         <Link
-          href="/r/table.json"
-          className="ml-auto inline-flex h-9 items-center gap-2 bg-foreground px-4 text-xs font-semibold tracking-[0.08em] text-background uppercase transition-opacity hover:opacity-80"
+          href="/"
+          className="mr-2 flex items-center gap-2 rounded-md font-semibold tracking-tight lg:mr-4"
         >
-          Get component
-          <ArrowUpRight className="size-3.5" />
+          <Logo className="size-5 shrink-0" />
+          <span>{siteConfig.wordmark}</span>
         </Link>
+
+        <MainNav className="hidden md:flex" />
+
+        <div className="ml-auto flex items-center gap-1">
+          <CommandMenu />
+          <span aria-hidden="true" className="mx-1 hidden h-4 w-px bg-border md:block" />
+          <Button variant="ghost" size="icon-sm" asChild>
+            <a
+              href={siteConfig.links.github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub repository"
+            >
+              <GitHubIcon />
+            </a>
+          </Button>
+          <ThemeToggle />
+          <MobileNav className="lg:hidden" />
+        </div>
       </div>
     </header>
   )
